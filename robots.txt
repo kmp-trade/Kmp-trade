@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kmp-trade.github.io/Kmp-trade/sitemap.xml
