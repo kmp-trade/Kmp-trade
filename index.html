@@ -102,6 +102,206 @@ const subject=encodeURIComponent('KMP Trade Website Enquiry');
 const body=encodeURIComponent('Name: '+n+'\nPhone: '+p+'\nEnquiry: '+t+'\n\n'+m);
 location.href='mailto:fl6592359@gmail.com?subject='+subject+'&body='+body;
 }
+  <!-- Owner & CEO Section -->
+<section class="owner-section" id="owner">
+  <div class="owner-card">
+
+    <div class="owner-photo">
+      <img src="forid-laskar.jpg" alt="Forid Laskar - Founder & CEO">
+    </div>
+
+    <div class="owner-info">
+      <p class="owner-label">MEET THE OWNER</p>
+
+      <h2>Forid Laskar</h2>
+
+      <h3>Founder & CEO — KMP Trade</h3>
+
+      <p>
+        Forid Laskar is the Founder and CEO of KMP Trade,
+        focused on building a trusted brand for quality masala products
+        and serving customers with reliability and care.
+      </p>
+
+      <button onclick="showOwnerDetails()">
+        View Owner Details
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Owner Details Popup -->
+<div id="ownerPopup" class="owner-popup">
+  <div class="owner-popup-box">
+
+    <span class="close-popup" onclick="closeOwnerDetails()">&times;</span>
+
+    <img src="forid-laskar.jpg" alt="Forid Laskar">
+
+    <h2>Forid Laskar</h2>
+
+    <h3>Founder & CEO</h3>
+
+    <p>
+      Founder & CEO of KMP Trade, working to develop
+      a trusted masala brand with a focus on quality,
+      taste and customer satisfaction.
+    </p>
+
+  </div>
+</div>
+
+<style>
+.owner-section {
+  padding: 60px 20px;
+  background: #fff8f0;
+  text-align: center;
+}
+
+.owner-card {
+  max-width: 900px;
+  margin: auto;
+  padding: 35px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.owner-photo img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #d99a24;
+}
+
+.owner-info {
+  flex: 1;
+}
+
+.owner-label {
+  color: #b77900;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.owner-info h2 {
+  margin: 8px 0;
+  font-size: 32px;
+}
+
+.owner-info h3 {
+  margin: 5px 0 15px;
+  color: #555;
+}
+
+.owner-info p {
+  line-height: 1.7;
+  color: #555;
+}
+
+.owner-info button {
+  background: #b77900;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.owner-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.owner-popup-box {
+  background: white;
+  max-width: 450px;
+  width: 100%;
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.owner-popup-box img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #d99a24;
+}
+
+.owner-popup-box h2 {
+  margin-bottom: 5px;
+}
+
+.owner-popup-box h3 {
+  color: #b77900;
+}
+
+.close-popup {
+  position: absolute;
+  right: 18px;
+  top: 10px;
+  font-size: 32px;
+  cursor: pointer;
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .owner-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .owner-photo img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .owner-info h2 {
+    font-size: 27px;
+  }
+}
+</style>
+
+<script>
+function showOwnerDetails() {
+  document.getElementById("ownerPopup").style.display = "flex";
+}
+
+function closeOwnerDetails() {
+  document.getElementById("ownerPopup").style.display = "none";
+}
+
+window.onclick = function(event) {
+  const popup = document.getElementById("ownerPopup");
+
+  if (event.target === popup) {
+    popup.style.display = "none";
+  }
+};
+</script>
 </script>
 </body>
 </html>
