@@ -4,1402 +4,286 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-content="KMP Trade - Premium quality Haldi, Mirchi and Dhaniya masala powders.">
-
-<title>KMP Trade | Premium Masala</title>
+<title>KMP Trade – Masala Products</title>
 
 <style>
-:root{
-  --brown:#35130d;
-  --wine:#651d16;
-  --red:#9c2e20;
-  --gold:#d6a343;
-  --cream:#fff8ec;
-  --white:#fff;
-  --text:#241713;
-  --muted:#766861;
-  --border:#eadcca;
-}
-
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
+  box-sizing:border-box;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#fffdf9;
-  color:var(--text);
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.container{
-  width:min(1150px,92%);
-  margin:auto;
-}
-
-/* TOP BAR */
-
-.topbar{
-  background:var(--brown);
-  color:#fff;
-  text-align:center;
-  padding:8px;
-  font-size:12px;
-  letter-spacing:1px;
+  font-family:Arial, sans-serif;
+  background:#fff8ed;
+  color:#3b1d0b;
 }
 
 /* HEADER */
-
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,253,249,.96);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-}
-
-.nav{
-  min-height:75px;
+  background:#7b170f;
+  padding:12px 20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
+  height:65px;
+  width:auto;
+  border-radius:50%;
 }
 
-.logo-mark{
-  width:48px;
-  height:48px;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--brown),var(--red));
-  color:#fff;
-  display:grid;
-  place-items:center;
-  font-weight:900;
-  font-size:20px;
+header h1{
+  color:white;
+  font-size:24px;
+  margin-left:10px;
 }
 
-.logo-text{
-  font-family:Georgia,serif;
-  color:var(--wine);
-  font-size:23px;
-  font-weight:bold;
+/* BILLBOARD */
+.billboard{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  background:#000;
 }
-
-.navlinks{
-  display:flex;
-  align-items:center;
-  gap:24px;
-  font-size:14px;
-  font-weight:bold;
-}
-
-.navlinks a:hover{
-  color:var(--red);
-}
-
-.cart-btn{
-  border:0;
-  background:var(--wine);
-  color:#fff;
-  padding:11px 17px;
-  border-radius:25px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* HERO */
-
-.hero{
-  background:
-  radial-gradient(circle at 85% 20%,#f3dfb9 0,transparent 35%),
-  linear-gradient(135deg,#fff9ef,#fff);
-  padding:50px 0 65px;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:45px;
-  align-items:center;
-}
-
-.badge{
-  display:inline-block;
-  color:var(--wine);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:15px;
-}
-
-.hero h1{
-  font-family:Georgia,serif;
-  color:var(--brown);
-  font-size:clamp(42px,6vw,72px);
-  line-height:1.05;
-  margin-bottom:18px;
-}
-
-.hero h1 span{
-  color:var(--wine);
-}
-
-.hero p{
-  color:var(--muted);
-  font-size:17px;
-  line-height:1.7;
-  max-width:550px;
-}
-
-.hero-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:25px;
-}
-
-.btn{
-  display:inline-block;
-  padding:13px 21px;
-  border-radius:30px;
-  font-weight:bold;
-}
-
-.btn-primary{
-  background:var(--wine);
-  color:#fff;
-}
-
-.btn-outline{
-  border:1px solid var(--wine);
-  color:var(--wine);
-}
-
-.trust{
-  display:flex;
-  flex-wrap:wrap;
-  gap:18px;
-  margin-top:25px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-.trust span::before{
-  content:"✓";
-  color:var(--gold);
-  font-weight:bold;
-  margin-right:6px;
-}
-
-/* SLIDER */
 
 .slider{
-  position:relative;
-  overflow:hidden;
-  border-radius:28px;
-  box-shadow:0 25px 70px rgba(53,19,13,.18);
-  background:var(--cream);
-}
-
-.slides{
   display:flex;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-  scroll-behavior:smooth;
-}
-
-.slides::-webkit-scrollbar{
-  display:none;
+  transition:transform .5s ease;
+  touch-action:pan-y;
 }
 
 .slide{
   min-width:100%;
-  scroll-snap-align:start;
-  position:relative;
 }
 
 .slide img{
   width:100%;
-  height:480px;
-  object-fit:cover;
+  display:block;
+  height:auto;
 }
 
-.slide-info{
+/* DOTS */
+.dots{
   position:absolute;
-  left:20px;
-  right:20px;
-  bottom:20px;
-  background:rgba(53,19,13,.88);
-  color:#fff;
-  border-radius:18px;
-  padding:15px 18px;
-}
-
-.slide-info h3{
-  font-family:Georgia,serif;
-  font-size:24px;
-}
-
-.slide-info p{
-  color:#f2dfcf;
-  font-size:13px;
-}
-
-.slider-dots{
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
   display:flex;
-  justify-content:center;
-  gap:7px;
-  padding:12px;
-  background:#fff;
+  gap:8px;
 }
 
-.slider-dots span{
-  width:8px;
-  height:8px;
+.dot{
+  width:10px;
+  height:10px;
+  background:white;
   border-radius:50%;
-  background:#c9b9aa;
+  opacity:.6;
 }
 
-/* SECTIONS */
-
-section{
-  padding:75px 0;
-}
-
-.section-head{
-  text-align:center;
-  max-width:700px;
-  margin:0 auto 40px;
-}
-
-.section-head small{
-  color:var(--wine);
-  text-transform:uppercase;
-  font-weight:bold;
-  letter-spacing:2px;
-}
-
-.section-head h2{
-  font-family:Georgia,serif;
-  color:var(--brown);
-  font-size:42px;
-  margin:10px 0;
-}
-
-.section-head p{
-  color:var(--muted);
+.dot.active{
+  opacity:1;
+  transform:scale(1.3);
 }
 
 /* PRODUCTS */
-
 .products{
-  background:#fff;
-}
-
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-
-.product{
-  border:1px solid var(--border);
-  border-radius:24px;
-  background:#fff;
-  overflow:hidden;
-  transition:.25s;
-  box-shadow:0 8px 25px rgba(53,19,13,.04);
-}
-
-.product:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 45px rgba(53,19,13,.12);
-}
-
-.product-image{
-  height:260px;
-  background:var(--cream);
-  overflow:hidden;
-}
-
-.product-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.product-content{
-  padding:22px;
-}
-
-.product h3{
-  font-family:Georgia,serif;
-  font-size:27px;
-  color:var(--brown);
-}
-
-.product-desc{
-  color:var(--muted);
-  font-size:14px;
-  margin:7px 0 18px;
-}
-
-.sizes{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:7px;
-}
-
-.size{
-  border:1px solid var(--border);
-  background:#fffaf2;
-  border-radius:10px;
-  padding:9px 5px;
+  padding:30px 18px;
   text-align:center;
-  cursor:pointer;
 }
 
-.size strong{
-  display:block;
-  color:var(--brown);
-  font-size:13px;
-}
-
-.size small{
-  color:var(--wine);
-  font-weight:bold;
-}
-
-.size.active{
-  background:var(--wine);
-  color:#fff;
-  border-color:var(--wine);
-}
-
-.size.active strong,
-.size.active small{
-  color:#fff;
-}
-
-.order-product{
-  width:100%;
-  margin-top:14px;
-  border:0;
-  background:var(--brown);
-  color:#fff;
-  padding:13px;
-  border-radius:12px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* WHY */
-
-.why{
-  background:var(--cream);
-}
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.feature{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:28px;
-}
-
-.feature-icon{
+.products h2{
+  color:#7b170f;
+  margin-bottom:20px;
   font-size:30px;
 }
 
-.feature h3{
-  font-family:Georgia,serif;
-  font-size:23px;
-  margin:12px 0 7px;
-  color:var(--brown);
-}
-
-.feature p{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* ORDER */
-
-.order{
-  background:var(--brown);
-  color:#fff;
-}
-
-.order-grid{
+.cards{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:center;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  max-width:1000px;
+  margin:auto;
 }
 
-.order h2{
-  font-family:Georgia,serif;
-  font-size:42px;
-  margin-bottom:15px;
+.card{
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 4px 15px rgba(0,0,0,.12);
 }
 
-.order p{
-  color:#dec9bd;
-}
-
-.order-box{
-  background:#fff;
-  color:var(--text);
-  border-radius:22px;
-  padding:25px;
-}
-
-.order-box h3{
-  font-family:Georgia,serif;
-  color:var(--brown);
-  margin-bottom:15px;
-}
-
-input,select{
-  width:100%;
-  padding:13px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  margin-bottom:11px;
-  font-size:14px;
-  outline:none;
-}
-
-input:focus,select:focus{
-  border-color:var(--gold);
-}
-
-.pay{
-  background:#fff7e8;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:15px;
+.card h3{
+  color:#7b170f;
   margin:10px 0;
 }
 
-.pay strong{
-  color:var(--wine);
+.card p{
+  color:#555;
 }
 
+/* WHATSAPP */
 .whatsapp{
-  width:100%;
-  border:0;
-  background:#168a4a;
-  color:#fff;
-  padding:14px;
-  border-radius:12px;
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 20px;
+  border-radius:50px;
+  text-decoration:none;
   font-weight:bold;
-  cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,.25);
+  z-index:2000;
 }
 
 /* FOOTER */
-
 footer{
-  background:#1e0805;
-  color:#cdbbb0;
-  padding:35px 0 18px;
-}
-
-.footer-main{
-  display:flex;
-  justify-content:space-between;
-  gap:25px;
-  align-items:center;
-}
-
-.footer-brand{
-  color:#fff;
-  font-family:Georgia,serif;
-  font-size:23px;
-}
-
-.owner{
-  text-align:right;
-  font-size:11px;
-  opacity:.75;
-  line-height:1.6;
-}
-
-.copyright{
-  border-top:1px solid rgba(255,255,255,.1);
-  margin-top:25px;
-  padding-top:15px;
+  background:#7b170f;
+  color:white;
   text-align:center;
-  font-size:11px;
-}
-
-/* CART */
-
-.cart-panel{
-  position:fixed;
-  right:-420px;
-  top:0;
-  width:min(400px,92%);
-  height:100vh;
-  background:#fff;
-  z-index:2000;
-  box-shadow:-15px 0 40px #0002;
   padding:25px;
-  transition:.3s;
-  overflow-y:auto;
-}
-
-.cart-panel.open{
-  right:0;
-}
-
-.cart-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:20px;
-}
-
-.close-cart{
-  border:0;
-  background:#eee;
-  border-radius:50%;
-  width:35px;
-  height:35px;
-  cursor:pointer;
-}
-
-.cart-item{
-  border-bottom:1px solid var(--border);
-  padding:13px 0;
-}
-
-.cart-total{
-  font-size:20px;
-  font-weight:bold;
-  margin:20px 0;
-  color:var(--wine);
-}
-
-.cart-order{
-  width:100%;
-  border:0;
-  background:#168a4a;
-  color:#fff;
-  padding:14px;
-  border-radius:12px;
-  font-weight:bold;
-}
-
-/* FLOATING WHATSAPP */
-
-.float-wa{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#168a4a;
-  color:#fff;
-  display:grid;
-  place-items:center;
-  font-size:25px;
-  box-shadow:0 10px 30px #0003;
-  z-index:900;
-}
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-  .navlinks{
-    display:none;
-  }
-
-  .hero-grid,
-  .order-grid{
-    grid-template-columns:1fr;
-  }
-
-  .product-grid,
-  .features{
-    grid-template-columns:1fr;
-  }
-
-  .slide img{
-    height:380px;
-  }
-
-  .hero{
-    padding-top:35px;
-  }
-
-  .section-head h2,
-  .order h2{
-    font-size:34px;
-  }
-
-  .footer-main{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .owner{
-    text-align:left;
-  }
-}
-
-@media(max-width:500px){
-
-  .product-image{
-    height:300px;
-  }
-
-  .slide img{
-    height:350px;
-  }
-
-  .hero h1{
-    font-size:45px;
-  }
+  margin-top:30px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-🌶️ KMP TRADE • PREMIUM MASALA POWDER • AUTHENTIC FLAVOUR
-</div>
-
 <header>
-<div class="container nav">
-
-<a href="#home" class="logo">
-<div class="logo-mark">K</div>
-<div class="logo-text">KMP Trade</div>
-</a>
-
-<nav class="navlinks">
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#why">Why KMP</a>
-<a href="#order">Order</a>
-</nav>
-
-<button class="cart-btn" onclick="openCart()">
-🛒 Cart <span id="cartCount">0</span>
-</button>
-
-</div>
+  <div style="display:flex;align-items:center;">
+    <img src="logo.png" class="logo" alt="KMP Trade Logo">
+    <h1>KMP TRADE</h1>
+  </div>
 </header>
 
 
-<!-- HERO -->
+<!-- SWIPE BILLBOARD -->
+<section class="billboard">
 
-<section class="hero" id="home">
+  <div class="slider" id="slider">
 
-<div class="container hero-grid">
+    <div class="slide">
+      <img src="billboard-haldi.png" alt="KMP Trade Haldi">
+    </div>
 
-<div>
+    <div class="slide">
+      <img src="billboard-mirchi.png" alt="KMP Trade Mirchi">
+    </div>
 
-<div class="badge">Premium Indian Spices</div>
+  </div>
 
-<h1>
-Pure Spice.<br>
-<span>Rich Flavour.</span>
-</h1>
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+  </div>
 
-<p>
-Bring authentic aroma, colour and flavour to every meal with
-KMP Trade premium masala powders.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#products" class="btn btn-primary">
-Shop Now
-</a>
-
-<a href="#order" class="btn btn-outline">
-Order Direct
-</a>
-
-</div>
-
-<div class="trust">
-<span>Premium Quality</span>
-<span>Freshly Packed</span>
-<span>Easy Ordering</span>
-</div>
-
-</div>
-
-
-<!-- SWIPE SLIDER -->
-
-<div class="slider">
-
-<div class="slides">
-
-<div class="slide">
-<img src="images/haldi.jpg" alt="KMP Trade Haldi">
-<div class="slide-info">
-<h3>Premium Haldi</h3>
-<p>Rich colour & authentic aroma</p>
-</div>
-</div>
-
-<div class="slide">
-<img src="images/mirchi.jpg" alt="KMP Trade Mirchi">
-<div class="slide-info">
-<h3>Premium Mirchi</h3>
-<p>Bold colour & delicious flavour</p>
-</div>
-</div>
-
-<div class="slide">
-<img src="images/dhaniya.jpg" alt="KMP Trade Dhaniya">
-<div class="slide-info">
-<h3>Premium Dhaniya</h3>
-<p>Fresh aroma for everyday cooking</p>
-</div>
-</div>
-
-</div>
-
-<div class="slider-dots">
-<span></span>
-<span></span>
-<span></span>
-</div>
-
-</div>
-
-</div>
 </section>
 
 
 <!-- PRODUCTS -->
+<section class="products">
 
-<section class="products" id="products">
+  <h2>Our Masala Products</h2>
 
-<div class="container">
+  <div class="cards">
 
-<div class="section-head">
+    <div class="card">
+      <h3>Haldi Powder</h3>
+      <p>Pure & Aromatic Turmeric Powder</p>
+    </div>
 
-<small>Our Collection</small>
+    <div class="card">
+      <h3>Mirchi Powder</h3>
+      <p>Rich Colour & Fiery Flavour</p>
+    </div>
 
-<h2>Premium Masala Powders</h2>
+    <div class="card">
+      <h3>Dhaniya Powder</h3>
+      <p>Authentic Aroma & Traditional Taste</p>
+    </div>
 
-<p>
-Choose your favourite spice and select the pack size that suits you.
-</p>
-
-</div>
-
-
-<div class="product-grid">
-
-
-<!-- HALDI -->
-
-<div class="product">
-
-<div class="product-image">
-<img src="images/haldi.jpg" alt="Haldi Masala">
-</div>
-
-<div class="product-content">
-
-<h3>Haldi</h3>
-
-<p class="product-desc">
-Premium turmeric powder with rich natural colour and aroma.
-</p>
-
-<div class="sizes">
-
-<div class="size active" onclick="selectSize(this,'Haldi',79)">
-<strong>200g</strong>
-<small>₹79</small>
-</div>
-
-<div class="size" onclick="selectSize(this,'Haldi',89)">
-<strong>250g</strong>
-<small>₹89</small>
-</div>
-
-<div class="size" onclick="selectSize(this,'Haldi',149)">
-<strong>500g</strong>
-<small>₹149</small>
-</div>
-
-</div>
-
-<button class="order-product"
-onclick="addProduct('Haldi',selectedPrices.Haldi)">
-Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- MIRCHI -->
-
-<div class="product">
-
-<div class="product-image">
-<img src="images/mirchi.jpg" alt="Mirchi Masala">
-</div>
-
-<div class="product-content">
-
-<h3>Mirchi</h3>
-
-<p class="product-desc">
-Aromatic chilli powder with bold colour and authentic taste.
-</p>
-
-<div class="sizes">
-
-<div class="size active" onclick="selectSize(this,'Mirchi',99)">
-<strong>200g</strong>
-<small>₹99</small>
-</div>
-
-<div class="size" onclick="selectSize(this,'Mirchi',109)">
-<strong>250g</strong>
-<small>₹109</small>
-</div>
-
-<div class="size" onclick="selectSize(this,'Mirchi',188)">
-<strong>500g</strong>
-<small>₹188</small>
-</div>
-
-</div>
-
-<button class="order-product"
-onclick="addProduct('Mirchi',selectedPrices.Mirchi)">
-Add to Cart
-</button>
-
-</div>
-</div>
-
-
-<!-- DHANIYA -->
-
-<div class="product">
-
-<div class="product-image">
-<img src="images/dhaniya.jpg" alt="Dhaniya Masala">
-</div>
-
-<div class="product-content">
-
-<h3>Dhaniya</h3>
-
-<p class="product-desc">
-Fresh aromatic coriander powder for everyday cooking.
-</p>
-
-<div class="sizes">
-
-<div class="size active" onclick="selectSize(this,'Dhaniya',79)">
-<strong>200g</strong>
-<small>₹79</small>
-</div>
-
-<div class="size" onclick="selectSize(this,'Dhaniya',89)">
-<strong>250g</strong>
-<small>₹89</small>
-</div>
-
-<div class="size" onclick="selectSize(this,'Dhaniya',139)">
-<strong>500g</strong>
-<small>₹139</small>
-</div>
-
-</div>
-
-<button class="order-product"
-onclick="addProduct('Dhaniya',selectedPrices.Dhaniya)">
-Add to Cart
-</button>
-
-</div>
-</div>
-
-</div>
-</div>
+  </div>
 
 </section>
 
 
-<!-- WHY -->
+<!-- WHATSAPP -->
+<a class="whatsapp"
+   href="https://wa.me/917099759754"
+   target="_blank">
+   WhatsApp Us
+</a>
 
-<section class="why" id="why">
-
-<div class="container">
-
-<div class="section-head">
-
-<small>Why KMP Trade</small>
-
-<h2>Made for Better Cooking</h2>
-
-<p>
-Simple spices. Rich aroma. Delicious food.
-</p>
-
-</div>
-
-<div class="features">
-
-<div class="feature">
-<div class="feature-icon">🌿</div>
-<h3>Authentic Spices</h3>
-<p>
-Carefully selected masala powders for everyday Indian cooking.
-</p>
-</div>
-
-<div class="feature">
-<div class="feature-icon">✨</div>
-<h3>Premium Quality</h3>
-<p>
-A premium presentation and quality-focused experience from KMP Trade.
-</p>
-</div>
-
-<div class="feature">
-<div class="feature-icon">📦</div>
-<h3>Easy Ordering</h3>
-<p>
-Choose your product, add it to cart and order directly.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ORDER -->
-
-<section class="order" id="order">
-
-<div class="container order-grid">
-
-<div>
-
-<small>DIRECT ORDER</small>
-
-<h2>Order Your Masala</h2>
-
-<p>
-Select your favourite product and place your order directly.
-You can pay using UPI.
-</p>
-
-</div>
-
-
-<div class="order-box">
-
-<h3>Quick Order</h3>
-
-<input id="customerName" type="text" placeholder="Your Name">
-
-<input id="customerPhone" type="tel" placeholder="Mobile Number">
-
-<select id="productSelect">
-
-<option value="Haldi">Haldi</option>
-<option value="Mirchi">Mirchi</option>
-<option value="Dhaniya">Dhaniya</option>
-
-</select>
-
-<select id="sizeSelect">
-
-<option value="200g">200g</option>
-<option value="250g">250g</option>
-<option value="500g">500g</option>
-
-</select>
-
-<input id="quantity" type="number" value="1" min="1">
-
-<div class="pay">
-
-<strong>UPI Payment</strong><br>
-UPI ID: <b>7099759754@ptsbi</b>
-<br><br>
-After placing the order, complete the payment using your UPI app.
-</div>
-
-<button class="whatsapp" onclick="quickOrder()">
-📲 Order on WhatsApp
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
 
 <footer>
-
-<div class="container">
-
-<div class="footer-main">
-
-<div>
-<div class="footer-brand">KMP Trade</div>
-<div>Premium Masala Products</div>
-</div>
-
-<div class="owner">
-Owner / Business Details<br>
-KMP Trade<br>
-UPI: 7099759754@ptsbi
-</div>
-
-</div>
-
-<div class="copyright">
-© 2026 KMP Trade. All rights reserved.
-</div>
-
-</div>
-
+  <h3>KMP TRADE</h3>
+  <p>Masala Products • Authentic & Flavourful</p>
+  <p>Swad Jo Rahe Yaad!</p>
 </footer>
-
-
-<!-- CART -->
-
-<div class="cart-panel" id="cartPanel">
-
-<div class="cart-header">
-
-<h2>🛒 Your Cart</h2>
-
-<button class="close-cart" onclick="closeCart()">×</button>
-
-</div>
-
-<div id="cartItems">
-<p>Your cart is empty.</p>
-</div>
-
-<div class="cart-total">
-Total: ₹<span id="cartTotal">0</span>
-</div>
-
-<button class="cart-order" onclick="cartWhatsApp()">
-📲 Place Order on WhatsApp
-</button>
-
-</div>
-
-
-<!-- FLOATING WHATSAPP -->
-
-<a
-class="float-wa"
-href="https://wa.me/?text=Hello%20KMP%20Trade%2C%20I%20want%20to%20order%20masala."
-target="_blank"
->
-💬
-</a>
 
 
 <script>
 
-let cart=[];
+let currentSlide = 0;
+const slider = document.getElementById("slider");
+const dots = document.querySelectorAll(".dot");
 
-let selectedPrices={
-  Haldi:79,
-  Mirchi:99,
-  Dhaniya:79
-};
+function showSlide(index){
 
+  currentSlide = index;
 
-/* SELECT SIZE */
+  slider.style.transform =
+    "translateX(-" + (currentSlide * 100) + "%)";
 
-function selectSize(element,product,price){
-
-  let parent=element.parentElement;
-
-  parent.querySelectorAll(".size").forEach(x=>{
-    x.classList.remove("active");
+  dots.forEach((dot,i)=>{
+    dot.classList.toggle("active",i === currentSlide);
   });
-
-  element.classList.add("active");
-
-  selectedPrices[product]=price;
-
 }
 
+/* AUTO SWIPE */
+setInterval(()=>{
+  currentSlide++;
 
-/* ADD PRODUCT */
-
-function addProduct(product,price){
-
-  let size="200g";
-
-  if(product==="Haldi"){
-    if(price===89) size="250g";
-    if(price===149) size="500g";
+  if(currentSlide >= 2){
+    currentSlide = 0;
   }
 
-  if(product==="Mirchi"){
-    if(price===109) size="250g";
-    if(price===188) size="500g";
-  }
+  showSlide(currentSlide);
 
-  if(product==="Dhaniya"){
-    if(price===89) size="250g";
-    if(price===139) size="500g";
-  }
+},4000);
 
-  cart.push({
-    product:product,
-    size:size,
-    price:price
-  });
 
-  updateCart();
+/* TOUCH SWIPE */
+let startX = 0;
 
-  openCart();
-}
+slider.addEventListener("touchstart",(e)=>{
+  startX = e.touches[0].clientX;
+});
 
+slider.addEventListener("touchend",(e)=>{
 
-/* CART */
+  let endX = e.changedTouches[0].clientX;
+  let difference = startX - endX;
 
-function updateCart(){
+  if(Math.abs(difference) > 50){
 
-  let items=document.getElementById("cartItems");
-
-  document.getElementById("cartCount").innerText=cart.length;
-
-  if(cart.length===0){
-
-    items.innerHTML="<p>Your cart is empty.</p>";
-
-    document.getElementById("cartTotal").innerText="0";
-
-    return;
-  }
-
-  let total=0;
-
-  items.innerHTML="";
-
-  cart.forEach((item,index)=>{
-
-    total+=item.price;
-
-    let div=document.createElement("div");
-
-    div.className="cart-item";
-
-    div.innerHTML=`
-      <strong>${item.product}</strong><br>
-      ${item.size} — ₹${item.price}
-      <br>
-      <button onclick="removeItem(${index})"
-      style="margin-top:7px;border:0;background:#eee;padding:5px 9px;border-radius:6px;cursor:pointer">
-      Remove
-      </button>
-    `;
-
-    items.appendChild(div);
-
-  });
-
-  document.getElementById("cartTotal").innerText=total;
-}
-
-
-function removeItem(index){
-
-  cart.splice(index,1);
-
-  updateCart();
-
-}
-
-
-/* OPEN CART */
-
-function openCart(){
-
-  document.getElementById("cartPanel").classList.add("open");
-
-}
-
-
-/* CLOSE CART */
-
-function closeCart(){
-
-  document.getElementById("cartPanel").classList.remove("open");
-
-}
-
-
-/* CART WHATSAPP */
-
-function cartWhatsApp(){
-
-  if(cart.length===0){
-
-    alert("Please add a product first.");
-
-    return;
-  }
-
-  let message="Hello KMP Trade,%0A%0AI want to place an order:%0A%0A";
-
-  let total=0;
-
-  cart.forEach((item,i)=>{
-
-    message+=
-    `${i+1}. ${item.product} - ${item.size} - ₹${item.price}%0A`;
-
-    total+=item.price;
-
-  });
-
-  message+=`%0ATotal: ₹${total}%0A%0A`;
-
-  message+=
-  "UPI ID: 7099759754@ptsbi%0A";
-
-  message+=
-  "%0APlease confirm my order.";
-
-  window.open(
-    "https://wa.me/?text="+message,
-    "_blank"
-  );
-
-}
-
-
-/* QUICK ORDER */
-
-function quickOrder(){
-
-  let name=
-  document.getElementById("customerName").value;
-
-  let phone=
-  document.getElementById("customerPhone").value;
-
-  let product=
-  document.getElementById("productSelect").value;
-
-  let size=
-  document.getElementById("sizeSelect").value;
-
-  let qty=
-  document.getElementById("quantity").value;
-
-  if(!name || !phone){
-
-    alert("Please enter your name and mobile number.");
-
-    return;
-  }
-
-
-  let prices={
-
-    "Haldi":{
-      "200g":79,
-      "250g":89,
-      "500g":149
-    },
-
-    "Mirchi":{
-      "200g":99,
-      "250g":109,
-      "500g":188
-    },
-
-    "Dhaniya":{
-      "200g":79,
-      "250g":89,
-      "500g":139
+    if(difference > 0){
+      currentSlide++;
+      if(currentSlide >= 2) currentSlide = 0;
+    }else{
+      currentSlide--;
+      if(currentSlide < 0) currentSlide = 1;
     }
 
-  };
+    showSlide(currentSlide);
+  }
 
-
-  let price=
-  prices[product][size];
-
-  let total=
-  price*Number(qty);
-
-
-  let message=
-  `Hello KMP Trade,%0A%0A`+
-  `I want to place an order.%0A%0A`+
-  `Name: ${name}%0A`+
-  `Mobile: ${phone}%0A`+
-  `Product: ${product}%0A`+
-  `Pack Size: ${size}%0A`+
-  `Quantity: ${qty}%0A`+
-  `Total: ₹${total}%0A%0A`+
-  `UPI ID: 7099759754@ptsbi%0A%0A`+
-  `Please confirm my order.`;
-
-
-  window.open(
-    "https://wa.me/?text="+message,
-    "_blank"
-  );
-
-}
+});
 
 </script>
 
